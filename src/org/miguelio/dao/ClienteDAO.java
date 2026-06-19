@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
-package org.miguelio.dao;
 
+package org.miguelio.dao;
+// Mi push 2026116
 /**
  *
  * @author informatica
  */
+
+import java.util.List;
+import org.miguelio.model.Cliente;
+        
 public interface ClienteDAO {
+    // FIRMAS DE METODOS
+    
+    boolean insertar(Cliente  cliente);
+    List<Cliente> listar();
+    Cliente bucar(long cui);
+    boolean actualizar(Cliente cliente);
+    boolean eliminar(long cui);
+    
     
 }
