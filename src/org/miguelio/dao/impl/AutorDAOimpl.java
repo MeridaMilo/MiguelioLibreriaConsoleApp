@@ -7,7 +7,6 @@ import org.miguelio.dao.AutorDAO;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
-import java.sql.Conexion;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
