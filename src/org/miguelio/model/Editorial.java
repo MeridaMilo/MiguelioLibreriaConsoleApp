@@ -7,7 +7,7 @@ public class Editorial {
     //nombre_editorial varchar(100) not null,
     //telefono_editorial varchar(15),
    // direccion_editoria varchar(100)
-   String nit; 
+   String Nit; 
    String nombre;
    String telefono;
    String direccion;
@@ -17,7 +17,7 @@ public class Editorial {
     }
 
     public Editorial(String nit, String nombre, String telefono, String direccion) {
-        this.nit = nit;
+        this.Nit = Nit;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
@@ -25,11 +25,11 @@ public class Editorial {
 // Getter and setters 
 
     public String getNit() {
-        return nit;
+        return Nit;
     }
 
-    public void setNit(String nit) {
-        this.nit = nit;
+    public void setNit(String Nit) {
+        this.Nit = Nit;
     }
 
     public String getNombre() {
