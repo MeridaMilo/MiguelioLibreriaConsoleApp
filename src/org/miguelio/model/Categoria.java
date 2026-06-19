@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package org.miguelio.model;
 
-/**
- *
- * @author informatica
- */
 public class Categoria {
+    /*
+    	id_categoria int primary key auto_increment,
+    nombre_categoria varchar(100)
+    */
+    //atributos de clase
+    long cui;
+    String nombre;
     
+    //constructores: asignacion de datos, instanciar objetos
+   
+    //lleno o con parametros
+    
+    //getter and setters 
 }
