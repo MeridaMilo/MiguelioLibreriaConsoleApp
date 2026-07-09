@@ -1,6 +1,6 @@
 
 package org.miguelio.model;
-
+// POJO: Nombre, atributo, constructores, getters y setters 
 public class Categoria {
     /*
     	id_categoria int primary key auto_increment,
