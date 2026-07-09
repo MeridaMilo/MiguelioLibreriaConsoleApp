@@ -1,6 +1,7 @@
 package org.miguelio.view;
 
 import java.util.Scanner;
+import org.miguelio.controller.EditorialController;
  
 public class MenuPrincipal {
  
@@ -18,6 +19,9 @@ public class MenuPrincipal {
             switch (opcion) {
                 case 1:
                     System.out.println("Cliente");
+                    EditorialConsoleView vistaEditorial = new EditorialConsoleView();
+                    EditorialController controladorEditorial = new EditorialController(vistaEditorial);
+                    controladorEditorial.iniciar();
                     break;
                 case 2:
                     System.out.println("Autor");
