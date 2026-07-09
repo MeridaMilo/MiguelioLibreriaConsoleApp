@@ -13,7 +13,7 @@ public interface ClienteDAO {
     // FIRMAS DE METODOS
     
     boolean insertar(Cliente  cliente);
-    List<Cliente> listar();
+    List<Cliente> ListarTodo();
     Cliente bucar(long cui);
     boolean actualizar(Cliente cliente);
     boolean eliminar(long cui);

@@ -17,7 +17,7 @@ create table clientes(
   // verificar todo
     // cambios para guardar programa
     long cui;
-    protected String nombre;
+    String nombre;
     String apellido;
     String correoElectronico;
     
