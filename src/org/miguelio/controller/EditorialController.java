@@ -1,6 +1,32 @@
 
 package org.miguelio.controller;
 
-public class EditorialController {
+import org.miguelio.dao.EditorialDAO;
+import org.miguelio.dao.impl.EditorialDAOimpl;
+import org.miguelio.view.EditorialConsoleView;
 
+
+public class EditorialController {
+    private final EditorialDAO dao;
+    private final EditorialConsoleView vista;
+    
+    public EditorialController(EditorialConsoleView vista) {
+        this.dao = new EditorialDAOimpl();
+        this.vista = vista;
+    }
+    
+    public void iniciar (){
+    int opcion;
+    do {
+        opcion = vista.mostrarMenu();
+        if (opcion == 2) {
+            listarTodos();
+            
+        }
+    } while (opcion != 4 );
+}
+    
+    private void listarTodos() {
+        vista.mostrarListaEditorial(dao.listarTodos());
+    }
 }
