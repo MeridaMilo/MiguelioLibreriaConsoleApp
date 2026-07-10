@@ -1,26 +1,35 @@
 package org.miguelio.utils;
 
-public class Conexion {
-    import java.sql.Connection;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
- 
-    private static final String URL = "jdbc:mysql://localhost:3306/libreriadb_in4cm?serverTimezone=UTC";
+
+public class Conexion {
+
+    private static Conexion instancia;
+
+    private static final String URL =
+            "jdbc:mysql://localhost:3306/libreriadb_in4cm?serverTimezone=UTC";
+
     private static final String USER = "IN4CM";
     private static final String PASSWORD = "#NdimAM4";
-    public static Connection conextar(){
-        Connection conexion = null;
+
+    private Conexion() {
         try {
-            // driver de JDBC
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //crear la conexion 
-            conexion = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException e) {
-            System.err.print("ERROR: no hay driver");
-        } catch (SQLException ex){
-            System.err.print("ERROR: no se pudo conectar a la DB"+ ex.getMessage());
+            System.err.println("Error al cargar el Driver: " + e.getMessage());
         }
-        return conexion;
     }
-}
+
+    public static synchronized Conexion getInstancia() {
+        if (instancia == null) {
+            instancia = new Conexion();
+        }
+        return instancia;
+    }
+
+    public Connection conectar() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
 }

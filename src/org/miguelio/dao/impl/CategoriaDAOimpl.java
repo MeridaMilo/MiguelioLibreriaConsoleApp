@@ -1,68 +1,66 @@
-
 package org.miguelio.dao.impl;
-import java.util.ArrayList;
+
+import org.miguelio.utils.Conexion;
 import org.miguelio.model.Categoria;
 import org.miguelio.dao.CategoriaDAO;
+
 import java.util.List;
-import java.sql.Res
-
-
-public class CategoriaDAOimpl implements CategoriaDAO {
-
-    import java.util.List; 
-import java.sql.CallableStatement; 
-import java.util.ArrayList; 
-import java.sql.PreparedStatement; 
+import java.util.ArrayList;
+import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.CallableStatement; 
-import java.sql.SQLException; 
+import java.sql.SQLException;
 import java.sql.ResultSet;
- 
-public class CategoriaDAOImpl implements CategoriaDAO{
-     @Override
+
+public class CategoriaDAOImpl implements CategoriaDAO {
+
+    @Override
     public List<Categoria> ListarTodos() {
-        //crear lista 
-        List<Categoria>  categoria = new ArrayList<>();//null 
-        //crear nuestras consultas 
-        String consulta = "{ call sp_listar_categoria()}";
-        //maperar el resultado de la consulta a objeto y lo agregaamos a la lista 
-        // Try with resources / intentar con recursos -----> cierra el recurso al completar el intetno
-        try (Connection conexion = Conexion.getInstancia().conectar();
+
+        // Crear lista
+        List<Categoria> categoria = new ArrayList<>();
+
+        // Crear consulta
+        String consulta = "{ call sp_listarcategorias() }";
+
+        try (
+                Connection conexion = Conexion.getInstancia().conectar();
                 CallableStatement consultaCall = conexion.prepareCall(consulta);
-                ResultSet tablaResultado = consultaCall.executeQuery(); )  {
-                //ResultSet tabla = Conexion.getInstancia().conectar().prepareCall(consulta).executeQuery();
-         //ciclo para rellenar mi lista 
-                //verificar cada fila del result set 
-                //va a guardar cada celda dentro de cada atributo de objeto
-           while (tablaResultado.next()) {
-               categoria.add(new Categoria(
-                               tablaResultado.getInt("idCategoria"),
-                               tablaResultado.getString("nombreCategoria")          
-               ));
-           }
-        }catch (SQLException e ) {   
-            System.err.print("Error al listar Categoria: " + e.getMessage());
-        } 
-        return categoria; 
+                ResultSet tablaResultado = consultaCall.executeQuery();) {
+
+            while (tablaResultado.next()) {
+
+                categoria.add(new Categoria(
+                        tablaResultado.getInt("id_categoria"),
+                        tablaResultado.getString("nombre_categoria")
+                ));
+            }
+
+        } catch (SQLException e) {
+
+            System.err.println("Error al listar Categoria: " + e.getMessage());
+
+        }
+
+        return categoria;
     }
- 
+
     @Override
     public boolean crear(Categoria categoria) {
-            return false; 
+        return false;
     }
- 
+
     @Override
     public Categoria buscar(int idCategoria) {
-        return null; 
+        return null;
     }
- 
+
     @Override
     public boolean actualizar(Categoria categoria) {
-        return false; 
+        return false;
     }
- 
+
     @Override
     public boolean eliminar(int idCategoria) {
-        return false; 
+        return false;
     }
 }

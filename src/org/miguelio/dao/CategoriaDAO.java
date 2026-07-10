@@ -1,14 +1,20 @@
-
 package org.miguelio.dao;
+
 import java.util.List;
 import org.miguelio.model.Categoria;
 
 public interface CategoriaDAO {
-   ///firmas de metodos
-    //CRUD
-    boolean insertar(Categoria categoria);
-    List<Categoria> listar();
-    Categoria buscar(int cui);
+
+    // Firmas de métodos
+    // CRUD
+
+    boolean crear(Categoria categoria);
+
+    List<Categoria> ListarTodos();
+
+    Categoria buscar(int idCategoria);
+
     boolean actualizar(Categoria categoria);
-    boolean eliminar(long cui);
+
+    boolean eliminar(int idCategoria);
 }

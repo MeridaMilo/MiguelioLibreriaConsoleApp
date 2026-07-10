@@ -1,18 +1,31 @@
-
 package org.miguelio.model;
-// POJO: Nombre, atributo, constructores, getters y setters 
+
 public class Categoria {
-    /*
-    	id_categoria int primary key auto_increment,
-    nombre_categoria varchar(100)
-    */
-    //atributos de clase
-    long cui;
-    String nombre;
-    
-    //constructores: asignacion de datos, instanciar objetos
-   
-    //lleno o con parametros
-    
-    //getter and setters 
+
+    private int idCategoria;
+    private String nombreCategoria;
+
+    public Categoria() {
+    }
+
+    public Categoria(int idCategoria, String nombreCategoria) {
+        this.idCategoria = idCategoria;
+        this.nombreCategoria = nombreCategoria;
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria.toUpperCase();
+    }
 }
