@@ -12,11 +12,12 @@ import org.miguelio.model.Cliente;
 public interface ClienteDAO {
     // FIRMAS DE METODOS
     
-    boolean insertar(Cliente  cliente);
-    List<Cliente> ListarTodo();
-    Cliente bucar(long cui);
+    boolean crear(Cliente  cliente);
+    List<Cliente> listarTodos();
+    Cliente buscarPorId(long cui);
     boolean actualizar(Cliente cliente);
     boolean eliminar(long cui);
+
     
     
 }
