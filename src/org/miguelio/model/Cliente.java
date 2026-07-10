@@ -1,36 +1,35 @@
 package org.miguelio.model;
 
-/**
- *
- * @author informatica
- */
 public class Cliente {
+
     /*
-create table clientes(
-	cui bigint primary key,
-    nombre_cliente varchar(100),
-    apellido_cliente varchar(100),
-    correo_electronico varchar(100)
-);
-    */
- // atributos clase
-  // verificar todo
-    // cambios para guardar programa
-    long cui;
-    String nombre;
-    String apellido;
-    String correoElectronico;
+    create table clientes(
+        cui bigint primary key,
+        nombre_cliente varchar(100),
+        apellido_cliente varchar(100),
+        correo_electronico varchar(100)
+    );
+     */
+
+    //atributos de clase
+    private long cui;
+    private String nombre;
+    private String apellido;
+    private String correoElectronico;
     
-    // construsctures
+
+
+    //constructores: asignación de datos, instanciar objetos
+    //vacio
     public Cliente() {
     }
-    
-    public Cliente(long cui, String nombre, String apellido, String correoElectronico){
-     this.cui = cui;
-     this.nombre = nombre;
-     this.apellido = apellido;
-     this.correoElectronico = correoElectronico;
-     
+    //lleno o con parametros
+    public Cliente(long cui, String nombre, String apellido, String correoElectronico) {
+        this.cui = cui;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correoElectronico = correoElectronico;
+        
     }
 
     public long getCui() {
@@ -46,10 +45,7 @@ create table clientes(
     }
 
     public void setNombre(String nombre) {
-            // Validacion: Cambiar mayuscula, 
-            String nombreMayusculas = nombre.toUpperCase();
-        this.nombre = nombreMayusculas;
-  
+        this.nombre = nombre;
     }
 
     public String getApellido() {
@@ -67,5 +63,4 @@ create table clientes(
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
-    
 }
