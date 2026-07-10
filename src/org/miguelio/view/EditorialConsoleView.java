@@ -52,11 +52,11 @@ public class EditorialConsoleView {
          System.out.println("Direccion: " + editorial.getDireccion());
      }
      
-     public void mostrarListaEditorial(List<Editorial> editorial){
+     public void mostrarListaEditorial(List<Editorial> editoriales){
          System.out.println("--- Lista de editoriales ---");   
          System.out.printf("%-10s %-10s %-10s", "NIT","NOMBRE","TELEFONO","DIRECCION");
          
-         for (Editorial editorial : editorial ) {
+         for (Editorial editorial : editoriales) {
              System.out.printf("%-10s %-10s %-10s",
                      editorial.getNit(),editorial.getNombre(),editorial.getTelefono(),editorial.getDireccion());
          }

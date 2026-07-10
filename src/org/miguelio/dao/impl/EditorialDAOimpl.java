@@ -8,6 +8,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import org.miguelio.utils.Conexion;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class EditorialDAOimpl implements EditorialDAO{
 
@@ -19,7 +20,7 @@ public class EditorialDAOimpl implements EditorialDAO{
     @Override
     public List<Editorial> listarTodos() {
        
-        List<Editorial> editorial = new ArrayList<>();
+        List<Editorial> editoriales = new ArrayList<>();
         
         String consulta = "{call sp_listareditoriales()}";
         
@@ -29,7 +30,7 @@ public class EditorialDAOimpl implements EditorialDAO{
                 
                 
               while (tablaResultado.next()) {
-                  editorial.add(new Editorial(
+                  editoriales.add(new Editorial(
                           tablaResultado.getString("Nit"),
                           tablaResultado.getString("nombre_editorial"),
                           tablaResultado.getString("telefono_editorial"),
@@ -38,16 +39,36 @@ public class EditorialDAOimpl implements EditorialDAO{
             }
          
               
-        } catch (Exception e) {
-            
+        } catch (SQLException e) {
+            System.err.print("Error al Listar clientes " + e.getMessage());
         }
       
-         return editorial;
+         return editoriales;
     }
 
     @Override
     public Editorial buscar(String Nit) {
-        return null;
+             Editorial cliente = new Editorial();
+
+        //consulta
+        String consultaSQL = "{call sp_buscareditorial(?)}";
+        //mapeamos el ResultSet al Objeto(Cliente) segun sus atributos y la fila devulta
+        try (Connection conexion = Conexion.getInstancia().conectar(); CallableStatement consultaCall = conexion.prepareCall(consultaSQL);) {
+            consultaCall.setString(1, Nit);
+            ResultSet tablaResultado = consultaCall.executeQuery();
+            if (tablaResultado.next()) {
+                cliente.setNit(tablaResultado.getString("Nit"));
+                cliente.setNombre(tablaResultado.getString("nombre_editorial"));
+                cliente.setTelefono(tablaResultado.getString("Telefono"));
+                cliente.setDireccion(tablaResultado.getString("Direccion"));
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            System.err.print("Error al buscar Cliente: " + e.getMessage());
+        }
+        //retornamos el objeto
+        return cliente;
     }
 
     @Override
