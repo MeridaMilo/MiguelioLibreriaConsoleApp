@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/gregory_jeronimo/bimestre_3/dos/MiguelioLibreriaConsoleApp/src/org/miguelio/dao/ClienteDAO.java</file>
-            <file>file:/C:/gregory_jeronimo/bimestre_3/dos/MiguelioLibreriaConsoleApp/src/org/miguelio/model/Cliente.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/dos/MiguelioLibreriaConsoleApp/src/org/miguelio/utils/Conexion.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/dos/MiguelioLibreriaConsoleApp/src/org/miguelio/controller/ClienteController.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/dos/MiguelioLibreriaConsoleApp/src/org/miguelio/view/MenuPrincipal.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/dos/MiguelioLibreriaConsoleApp/src/org/miguelio/view/ClienteConsolerView.java</file>
             <file>file:/C:/gregory_jeronimo/bimestre_3/dos/MiguelioLibreriaConsoleApp/src/org/miguelio/dao/impl/ClienteDAOImpl.java</file>
         </group>
     </open-files>
