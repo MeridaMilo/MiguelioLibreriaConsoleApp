@@ -15,7 +15,7 @@ public class MenuPrincipal {
             System.out.println("1. Modulo Cliente");
             System.out.println("2. Modulo Autores");
             System.out.println("3. Modulo Categorias");
-            System.out.println("4. Modulo Editoriales");
+            System.out.println("4. modulo Editoriales");
             System.out.println("0. Salir");
 
             opcion = Integer.parseInt(leer.nextLine());

@@ -3,7 +3,6 @@ package org.miguelio.dao.impl;
 import org.miguelio.utils.Conexion;
 import org.miguelio.model.Categoria;
 import org.miguelio.dao.CategoriaDAO;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.CallableStatement;
