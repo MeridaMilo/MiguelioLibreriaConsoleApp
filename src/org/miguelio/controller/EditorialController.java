@@ -7,6 +7,7 @@ import org.miguelio.view.EditorialConsoleView;
 
 
 public class EditorialController {
+    
     private final EditorialDAO dao;
     private final EditorialConsoleView vista;
     
@@ -23,7 +24,9 @@ public class EditorialController {
             listarTodos();
             
         }
+    
     } while (opcion != 4 );
+    
 }
     
     private void listarTodos() {

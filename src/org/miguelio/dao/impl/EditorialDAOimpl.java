@@ -40,7 +40,7 @@ public class EditorialDAOimpl implements EditorialDAO{
          
               
         } catch (SQLException e) {
-            System.err.print("Error al Listar clientes " + e.getMessage());
+            System.err.print("Error al Listar Editoriales " + e.getMessage());
         }
       
          return editoriales;
@@ -65,7 +65,7 @@ public class EditorialDAOimpl implements EditorialDAO{
                 return null;
             }
         } catch (SQLException e) {
-            System.err.print("Error al buscar Cliente: " + e.getMessage());
+            System.err.print("Error al buscar Editorial: " + e.getMessage());
         }
         //retornamos el objeto
         return cliente;

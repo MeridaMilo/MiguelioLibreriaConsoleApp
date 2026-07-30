@@ -57,11 +57,21 @@ public class EditorialConsoleView {
          System.out.printf("%-10s %-10s %-10s", "NIT","NOMBRE","TELEFONO","DIRECCION");
          
          for (Editorial editorial : editoriales) {
-             System.out.printf("%-10s %-10s %-10s",
+             System.out.printf("%-10s %-10s %-10s\n",
                      editorial.getNit(),editorial.getNombre(),editorial.getTelefono(),editorial.getDireccion());
          }
-     } 
+     }
      
+      public void mostrarBuscarEditorial(List<Editorial> editoriales){
+         System.out.println("---    Se busco: ---");   
+         System.out.printf("%-10s %-10s %-10s", "NIT","NOMBRE","TELEFONO","DIRECCION");
+         
+         for (Editorial editorial : editoriales) {
+             System.out.printf("%-10s %-10s %-10s\n",
+                     editorial.getNit(),editorial.getNombre(),editorial.getTelefono(),editorial.getDireccion());
+         }    
+     }
+
      public void mostrarMensaje(String mensaje){
          System.out.println(mensaje);
      }
