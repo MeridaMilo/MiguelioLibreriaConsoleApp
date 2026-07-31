@@ -3,21 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/controller/InicioSesionController.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/controller/CategoriaDashboradController.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/utils/SesionContext.java</file>
+            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/view/CategoriaConsoleView.java</file>
+            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/view/CategoriaFXView.fxml</file>
+            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/view/MenuPrincipalFXView.fxml</file>
+            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/controller/MenuPrincipalFXController.java</file>
             <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/model/Categoria.java</file>
             <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/dao/impl/CategoriaDAOImpl.java</file>
             <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/system/main.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/utils/Conexion.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/model/Usuario.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/utils/ValidacionException.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/view/CategoriaConsoleView.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/dao/UsuarioDAO.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/controller/RegistrarUsuarioController.java</file>
             <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/view/MenuPrincipal.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/system/Principal.java</file>
-            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/utils/SecurityUtil.java</file>
+            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/controller/CategoriaController.java</file>
+            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/dao/CategoriaDAO.java</file>
+            <file>file:/C:/miguel_guzman/bim_tres/semana_dos/MiguelioLibreriaConsoleApp/src/org/miguelio/utils/Conexion.java</file>
         </group>
     </open-files>
 </project-private>

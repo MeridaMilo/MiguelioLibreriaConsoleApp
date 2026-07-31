@@ -1,51 +1,49 @@
 package org.miguelio.dao.impl;
 
-import org.miguelio.utils.Conexion;
-import org.miguelio.model.Categoria;
 import org.miguelio.dao.CategoriaDAO;
-import java.util.List;
-import java.util.ArrayList;
+import org.miguelio.model.Categoria;
+import org.miguelio.utils.Conexion;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CategoriaDAOImpl implements CategoriaDAO {
 
     @Override
-    public List<Categoria> ListarTodos() {
+    public boolean crear(Categoria categoria) {
+        return false;
+    }
 
-        // Crear lista
-        List<Categoria> categoria = new ArrayList<>();
+    @Override
+    public List<Categoria> listarTodos() {
 
-        // Crear consulta
-        String consulta = "{ call sp_listarcategorias() }";
+        List<Categoria> categorias = new ArrayList<>();
+
+        String consulta = "{call sp_listarcategorias()}";
 
         try (
                 Connection conexion = Conexion.getInstancia().conectar();
                 CallableStatement consultaCall = conexion.prepareCall(consulta);
-                ResultSet tablaResultado = consultaCall.executeQuery();) {
+                ResultSet tablaResultado = consultaCall.executeQuery()
+                ) {
 
             while (tablaResultado.next()) {
 
-                categoria.add(new Categoria(
+                categorias.add(new Categoria(
                         tablaResultado.getInt("id_categoria"),
                         tablaResultado.getString("nombre_categoria")
                 ));
             }
 
         } catch (SQLException e) {
-
-            System.err.println("Error al listar Categoria: " + e.getMessage());
-
+            System.err.println("Error al listar categorias: " + e.getMessage());
         }
 
-        return categoria;
-    }
-
-    @Override
-    public boolean crear(Categoria categoria) {
-        return false;
+        return categorias;
     }
 
     @Override
