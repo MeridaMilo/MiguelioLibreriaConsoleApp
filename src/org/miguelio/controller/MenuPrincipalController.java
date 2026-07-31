@@ -4,7 +4,7 @@ package org.miguelio.controller;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import org.miguelio.system.Main;
+import org.miguelio.system.Principal;
 
 //falta el extends initilize
 /// hhh
@@ -13,7 +13,7 @@ public class MenuPrincipalController {
     @FXML
     private void handleClientes() {
         try {
-            Main.cambiarVista("/org/miguelio/view/ClienteView.fxml");
+            Principal.cambiarVista("/org/miguelio/view/ClienteView.fxml");
         } catch (Exception e) {
             mostrarError("Error al cargar la vista de clientes:\n" + e.getMessage());
         }
