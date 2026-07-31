@@ -1,27 +1,25 @@
 
 package org.miguelio.controller;
 
-import com.sun.tools.javac.Main;
+
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-
-
-
+import org.miguelio.system.main;
 
 public class MenuPrincipalFXController {
     
     @FXML 
-    private void handleEditorial(){
+    public void handleEditorial(){
         try{
-            Main.cambiarVista("/org/miguelio/view/EditorialFXView.fxml");
+            main.cambiarVista("/org/miguelio/view/EditorialFXView.fxml");
         }catch(Exception e) {
             mostrarError("Error al cargar la vista de editoriales: ");
         }
 }
 
     @FXML 
-    private void handleNoDisponible(){
+    public void handleNoDisponible(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Modulo no disponible");
         alert.setHeaderText(null);
@@ -29,7 +27,7 @@ public class MenuPrincipalFXController {
         alert.showAndWait();
  }       
     @FXML 
-    private void handleSalir(){
+    public void handleSalir(){
     Platform.exit();
     }
 private void mostrarError(String mensaje) {

@@ -48,19 +48,18 @@ public class EditorialDAOimpl implements EditorialDAO{
 
     @Override
     public Editorial buscar(String Nit) {
-             Editorial cliente = new Editorial();
+             Editorial editorial = new Editorial();
 
         //consulta
         String consultaSQL = "{call sp_buscareditorial(?)}";
-        //mapeamos el ResultSet al Objeto(Cliente) segun sus atributos y la fila devulta
         try (Connection conexion = Conexion.getInstancia().conectar(); CallableStatement consultaCall = conexion.prepareCall(consultaSQL);) {
             consultaCall.setString(1, Nit);
             ResultSet tablaResultado = consultaCall.executeQuery();
             if (tablaResultado.next()) {
-                cliente.setNit(tablaResultado.getString("Nit"));
-                cliente.setNombre(tablaResultado.getString("nombre_editorial"));
-                cliente.setTelefono(tablaResultado.getString("Telefono"));
-                cliente.setDireccion(tablaResultado.getString("Direccion"));
+                editorial.setNit(tablaResultado.getString("Nit"));
+                editorial.setNombre(tablaResultado.getString("nombre_editorial"));
+                editorial.setTelefono(tablaResultado.getString("Telefono"));
+                editorial.setDireccion(tablaResultado.getString("Direccion"));
             } else {
                 return null;
             }
@@ -68,7 +67,7 @@ public class EditorialDAOimpl implements EditorialDAO{
             System.err.print("Error al buscar Editorial: " + e.getMessage());
         }
         //retornamos el objeto
-        return cliente;
+        return editorial;
     }
 
     @Override

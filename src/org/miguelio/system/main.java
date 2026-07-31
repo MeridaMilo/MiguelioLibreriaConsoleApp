@@ -17,7 +17,7 @@ public static Stage escenarioPrincipal;
     @Override
     public void start(Stage escenarioPrincipal) throws Exception {
         this.escenarioPrincipal = escenarioPrincipal;
-        FXMLLoader loader = new FXMLLoader (getClass().getResource("/org/miguelio/view/MenuPrincipal.fxml"));
+        FXMLLoader loader = new FXMLLoader (getClass().getResource("/org/miguelio/view/MenuPrincipalFXView.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         escenarioPrincipal.setTitle("Miguelio Libreria");
@@ -33,4 +33,4 @@ public static Stage escenarioPrincipal;
     public static void main(String[] args) {
         launch(args);
     }
-}
+}   

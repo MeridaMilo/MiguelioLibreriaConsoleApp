@@ -2,7 +2,6 @@
 package org.miguelio.controller;
 
 
-import com.sun.tools.javac.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -16,6 +15,7 @@ import javafx.scene.control.TextField;
 import org.miguelio.dao.EditorialDAO;
 import org.miguelio.dao.impl.EditorialDAOimpl;
 import org.miguelio.model.Editorial;
+import org.miguelio.system.main;
 
 public class EditorialFXController implements Initializable {
 
@@ -30,10 +30,10 @@ public class EditorialFXController implements Initializable {
     @FXML
     private Label lblMensaje;
     @FXML
-    private TableView<Editorial> tablaEditorial;//Tabla de entidad: cliente
-
+    private TableView<Editorial> tablaEditorial;
+   
     private final EditorialDAO editorialDAO = new EditorialDAOimpl();
-    private final ObservableList<Editorial> listaEditorial = FXCollections.observableArrayList();//Entidad:Cliente
+    private final ObservableList<Editorial> listaEditorial = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -59,7 +59,7 @@ public class EditorialFXController implements Initializable {
     }
 
     @FXML
-    private void handleGuardar() {
+    public void handleGuardar() {
         try {
             if (txtNIT.getText().isEmpty() || txtNombre.getText().isEmpty()
                     || txtDireccion.getText().isEmpty() || txtTelefono.getText().isEmpty()) {
@@ -68,7 +68,7 @@ public class EditorialFXController implements Initializable {
             }
 
             Editorial editorial = new Editorial();
-            editorial.setNit(String.parseString(txtNIT.getText().trim()));
+            editorial.setNit((txtNIT.getText().trim()));
             editorial.setNombre(txtNombre.getText().trim());
             editorial.setDireccion(txtDireccion.getText().trim());
             editorial.setTelefono(txtTelefono.getText().trim());
@@ -78,7 +78,7 @@ public class EditorialFXController implements Initializable {
                 cargarTabla();
                 limpiarFormulario();
             } else {
-                mostrarError("No se pudo registrar el cliente.");
+                mostrarError("No se pudo registrar el editorial.");
             }
         } catch (NumberFormatException e) {
             mostrarError("Su Nit debe ser un número válido.");
@@ -88,21 +88,21 @@ public class EditorialFXController implements Initializable {
     }
 
     @FXML
-    private void handleLimpiar() {
+    public void handleLimpiar() {
         limpiarFormulario();
         lblMensaje.setText("");
     }
 
     @FXML
-    private void handleActualizar() {
+    public void handleActualizar() {
         cargarTabla();
         lblMensaje.setText("Tabla actualizada.");
     }
 
     @FXML
-    private void handleVolver() {
+    public void handleVolver() {
         try {
-            Main.cambiarVista("/org/miguelio/view/MenuPrincipal.fxml");
+            main.cambiarVista("/org/miguelio/view/MenuPrincipalFXView.fxml");
         } catch (Exception e) {
             mostrarError("Error al volver al menú: " + e.getMessage());
         }
