@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import org.miguelio.system.Main;
 
 //falta el extends initilize
+/// hhh
 public class MenuPrincipalController {
 
     @FXML
