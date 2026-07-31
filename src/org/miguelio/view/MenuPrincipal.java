@@ -1,9 +1,9 @@
+
 package org.miguelio.view;
 import java.util.Scanner;
 import org.miguelio.controller.ClienteController;
- 
+
 public class MenuPrincipal {
- 
     Scanner leer = new Scanner(System.in);
     
     public void iniciar(){
@@ -17,7 +17,7 @@ public class MenuPrincipal {
             System.out.println("4. Salir");
             opcion = Integer.parseInt(leer.nextLine());
             
-            switch(opcion) {
+            switch (opcion) {
                 case 1:
                         System.out.println("Cliente");
                         ClienteConsolerView vistaCliente = new ClienteConsolerView();
