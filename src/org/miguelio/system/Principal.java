@@ -1,13 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.miguelio.system;
 
-/**
- *
- * @author informatica
- */
-public class Principal {
-    
+import java.io.IOException;
+import java.net.URL;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Principal extends Application {
+
+    private static Stage escenarioPrincipal;
+
+    @Override
+    public void start(Stage escenarioPrincipal) {
+        try {
+            Principal.escenarioPrincipal = escenarioPrincipal;     
+            cambiarEscena("/org/miguelio/view/InicioSesionView.fxml");
+            escenarioPrincipal.setTitle("Librería - In4cm");
+        } catch (Exception e) {
+            System.err.println("Error crítico al iniciar la aplicación: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public static void cambiarEscena(String rutaFXML) throws IOException {
+        URL archivoURL = Principal.class.getResource(rutaFXML);
+        
+        if (archivoURL == null) {
+            throw new IOException("No se encontró el archivo FXML: " + rutaFXML);
+        }
+
+        FXMLLoader loader = new FXMLLoader(archivoURL);
+        Parent root = loader.load();
+        
+        Scene escena = new Scene(root); 
+        escenarioPrincipal.setScene(escena);
+        escenarioPrincipal.sizeToScene();
+        escenarioPrincipal.centerOnScreen();
+        escenarioPrincipal.show();        
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
