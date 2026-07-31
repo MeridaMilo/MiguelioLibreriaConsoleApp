@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import org.miguelio.dao.ClienteDAO;
 import org.miguelio.dao.impl.ClienteDAOImpl;
 import org.miguelio.model.Cliente;
-import org.miguelio.system.Main;
+import org.miguelio.system.Principal;
 
 public class ClienteFXController implements Initializable {
 
@@ -101,7 +101,7 @@ public class ClienteFXController implements Initializable {
     @FXML
     private void handleVolver() {
         try {
-            Main.cambiarVista("/org/miguelio/view/MenuPrincipal.fxml");
+            Principal.cambiarVista("/org/miguelio/view/MenuPrincipal.fxml");
         } catch (Exception e) {
             mostrarError("Error al volver al menú: " + e.getMessage());
         }
