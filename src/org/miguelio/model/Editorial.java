@@ -17,6 +17,7 @@ public class Editorial {
     }
 // Getter and setters 
     
+    
     public String getNit() {
         return Nit;
     }

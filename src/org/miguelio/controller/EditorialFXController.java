@@ -1,7 +1,6 @@
 
 package org.miguelio.controller;
 
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -59,7 +58,7 @@ public class EditorialFXController implements Initializable {
     }
 
     @FXML
-    public void handleGuardar() {
+    public void handleGuardarEditorial() {
         try {
             if (txtNIT.getText().isEmpty() || txtNombre.getText().isEmpty()
                     || txtDireccion.getText().isEmpty() || txtTelefono.getText().isEmpty()) {
@@ -88,19 +87,19 @@ public class EditorialFXController implements Initializable {
     }
 
     @FXML
-    public void handleLimpiar() {
+    public void handleLimpiarEditorial() {
         limpiarFormulario();
         lblMensaje.setText("");
     }
 
     @FXML
-    public void handleActualizar() {
+    public void handleActualizarEditorial() {
         cargarTabla();
         lblMensaje.setText("Tabla actualizada.");
     }
 
     @FXML
-    public void handleVolver() {
+    public void handleVolverEditorial() {
         try {
             main.cambiarVista("/org/miguelio/view/MenuPrincipalFXView.fxml");
         } catch (Exception e) {
@@ -122,4 +121,5 @@ public class EditorialFXController implements Initializable {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+   
 }

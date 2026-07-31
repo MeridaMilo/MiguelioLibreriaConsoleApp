@@ -17,14 +17,14 @@
     <left>
         <VBox maxWidth="300" minWidth="300" spacing="10">
             <padding><Insets right="20" /></padding>
-            <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Registrar Editorial" />
+            <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Registra tu Editorial" />
             <TextField fx:id="txtNit" promptText="NIT" />
             <TextField fx:id="txtNombre" promptText="Nombre" />
             <TextField fx:id="txtTelefono" promptText="Telefono" />
             <TextField fx:id="txtDireccion" promptText="Direccion" />
             <HBox spacing="10">
-                <Button onAction="#handleGuardar" prefWidth="120" text="Guardar" />
-                <Button onAction="#handleLimpiar" prefWidth="120" text="Limpiar" />
+                <Button onAction="#handleGuardarEditorial" prefWidth="120" text="Guardar" />
+                <Button onAction="#handleLimpiarEditorial" prefWidth="120" text="Limpiar" />
             </HBox>
             <Label fx:id="lblMensaje" />
         </VBox>
@@ -58,8 +58,8 @@
                 </columns>
             </TableView>
             <HBox spacing="10">
-                <Button onAction="#handleActualizar" text="Actualizar Tabla" />
-                <Button onAction="#handleVolver" text="Volver al Menú" />
+                <Button onAction="#handleActualizarEditorial" text="Actualizar Tabla" />
+                <Button onAction="#handleVolverEditorial" text="Volver al Menú" />
             </HBox>
         </VBox>
     </center>
