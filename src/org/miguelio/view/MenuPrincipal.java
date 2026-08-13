@@ -1,4 +1,4 @@
-package org.tb.view;
+package org.miguelio.view;
 import java.util.Scanner;
  
 public class MenuPrincipal {
@@ -30,9 +30,12 @@ public class MenuPrincipal {
                 case 5:
                     System.out.println("Editoriales");
                     break;
-                default:
+                default:  
                     System.out.println("NO existe esta opción");
             }
         } while (opcion != 4);
     }
 }
+
+
+
