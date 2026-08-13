@@ -6,48 +6,62 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.miguelio.controller.CategoriaFXController">
-    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
-
+<BorderPane xmlns="http://javafx.com/javafx/21.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.miguelio.controller.CategoriaFXController">
+    <padding>
+        <Insets bottom="20"
+                    left="20"
+                    right="20"
+                    top="20" />
+    </padding>
     <left>
-        <VBox maxWidth="300" minWidth="300" spacing="10">
-            <padding><Insets right="20" /></padding>
-            <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Registrar Categoria" />
-            <TextField fx:id="txtId" promptText="Id" />
-            <TextField fx:id="txtNombre" promptText="Nombre" />
+        <VBox maxWidth="300"
+              minWidth="300"
+              spacing="10">
+            <padding>
+                <Insets right="20" />
+            </padding>
+            <Label style="-fx-font-size: 18; -fx-font-weight: bold;"
+                   text="Registrar Categoria" />
+            <TextField fx:id="txtIdCategoria"
+                       promptText="Id" />
+            <TextField fx:id="txtNombreCategoria"
+                       promptText="Nombre" />
             <HBox spacing="10">
-                <Button onAction="#handleGuardar" prefWidth="120" text="Guardar" />
-                <Button onAction="#handleLimpiar" prefWidth="120" text="Limpiar" />
+                <Button onAction="#handleGuardar"
+                        prefWidth="120"
+                        text="Guardar" />
+                <Button onAction="#handleLimpiar"
+                        prefWidth="120"
+                        text="Limpiar" />
             </HBox>
             <Label fx:id="lblMensaje" />
         </VBox>
     </left>
-
     <center>
         <VBox spacing="10">
-            <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Lista de Categorias" />
-            <TableView fx:id="tablaEditorial">
+            <Label style="-fx-font-size: 18; -fx-font-weight: bold;"
+                   text="Lista de Categorias" />
+            <TableView fx:id="tablaCategoria">
                 <columns>
-                    <TableColumn prefWidth="120" text="ID">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="NIT" />
-                        </cellValueFactory>
-                    </TableColumn>
-                    <TableColumn prefWidth="140" text="Nombre">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="nombre" />
-                        </cellValueFactory>
-                    </TableColumn>
+                    <TableColumn fx:id="colID"
+                                 prefWidth="120"
+                                 text="ID" />
+                    <TableColumn fx:id="colNombre"
+                                 prefWidth="140"
+                                 text="Nombre" />
                 </columns>
             </TableView>
             <HBox spacing="10">
-                <Button onAction="#handleActualizar" text="Actualizar Tabla" />
-                <Button onAction="#handleVolver" text="Volver al Menú" />
+                <Button onAction="#handleActualizar"
+                            text="Actualizar Tabla" />
+                <Button onAction="#handleVolver"
+                            text="Volver al Menú" />
             </HBox>
         </VBox>
     </center>
