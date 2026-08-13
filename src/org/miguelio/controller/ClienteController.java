@@ -10,7 +10,7 @@ public class ClienteController {
 
     private final ClienteDAO dao;
     private final ClienteConsolerView vista;
-
+ 
     public ClienteController(ClienteConsolerView vista) {
         this.dao = new ClienteDAOImpl();
         this.vista = vista;

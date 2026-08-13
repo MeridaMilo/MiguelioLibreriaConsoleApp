@@ -1,4 +1,3 @@
-
 package org.miguelio.controller;
 
 import java.net.URL;
@@ -9,8 +8,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.miguelio.dao.ClienteDAO;
 import org.miguelio.dao.impl.ClienteDAOImpl;
 import org.miguelio.model.Cliente;
@@ -29,17 +30,34 @@ public class ClienteFXController implements Initializable {
     @FXML
     private Label lblMensaje;
     @FXML
-    private TableView<Cliente> tablaClientes;//Tabla de entidad: cliente
+    private TableView<Cliente> tablaClientes; // Tabla de entidad: cliente
 
+    @FXML
+    private TableColumn<Cliente, Long> colCui;
+    @FXML
+    private TableColumn<Cliente, String> colNombre;
+    @FXML
+    private TableColumn<Cliente, String> colApellido;
+    @FXML
+    private TableColumn<Cliente, String> colCorreo;
+     
     private final ClienteDAO clienteDAO = new ClienteDAOImpl();
-    private final ObservableList<Cliente> listaClientes = FXCollections.observableArrayList();//Entidad:Cliente
+    private final ObservableList<Cliente> listaClientes = FXCollections.observableArrayList(); // Entidad: Cliente
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        configurarTabla();
         cargarTabla();
         seleccionarFila();
     }
 
+    private void configurarTabla() {
+        colCui.setCellValueFactory(new PropertyValueFactory<>("cui"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+        colCorreo.setCellValueFactory(new PropertyValueFactory<>("correoElectronico"));
+    }
+    
     private void cargarTabla() {
         listaClientes.setAll(clienteDAO.listarTodos());
         tablaClientes.setItems(listaClientes);
@@ -121,6 +139,6 @@ public class ClienteFXController implements Initializable {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-
 }
+
 
