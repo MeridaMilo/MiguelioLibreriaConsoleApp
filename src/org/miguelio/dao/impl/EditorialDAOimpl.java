@@ -31,7 +31,7 @@ public class EditorialDAOimpl implements EditorialDAO{
                 
               while (tablaResultado.next()) {
                   editoriales.add(new Editorial(
-                          tablaResultado.getString("Nit"),
+                          tablaResultado.getString("nit"),
                           tablaResultado.getString("nombre_editorial"),
                           tablaResultado.getString("telefono_editorial"),
                           tablaResultado.getString("direccion_editorial")
@@ -47,16 +47,16 @@ public class EditorialDAOimpl implements EditorialDAO{
     }
 
     @Override
-    public Editorial buscar(String Nit) {
+    public Editorial buscar(String nit) {
              Editorial editorial = new Editorial();
 
         //consulta
         String consultaSQL = "{call sp_buscareditorial(?)}";
         try (Connection conexion = Conexion.getInstancia().conectar(); CallableStatement consultaCall = conexion.prepareCall(consultaSQL);) {
-            consultaCall.setString(1, Nit);
+            consultaCall.setString(1, nit);
             ResultSet tablaResultado = consultaCall.executeQuery();
             if (tablaResultado.next()) {
-                editorial.setNit(tablaResultado.getString("Nit"));
+                editorial.setNit(tablaResultado.getString("nit"));
                 editorial.setNombre(tablaResultado.getString("nombre_editorial"));
                 editorial.setTelefono(tablaResultado.getString("Telefono"));
                 editorial.setDireccion(tablaResultado.getString("Direccion"));

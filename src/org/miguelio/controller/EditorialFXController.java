@@ -9,8 +9,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.miguelio.dao.EditorialDAO;
 import org.miguelio.dao.impl.EditorialDAOimpl;
 import org.miguelio.model.Editorial;
@@ -19,7 +21,7 @@ import org.miguelio.system.main;
 public class EditorialFXController implements Initializable {
 
     @FXML
-    private TextField txtNIT;
+    private TextField txtnit;
     @FXML
     private TextField txtNombre;
     @FXML
@@ -30,16 +32,30 @@ public class EditorialFXController implements Initializable {
     private Label lblMensaje;
     @FXML
     private TableView<Editorial> tablaEditorial;
-   
+    @FXML TableColumn colNIT;
+    @FXML TableColumn colNombre;
+    @FXML TableColumn colTelefono;
+    @FXML TableColumn colDireccion;
+    
     private final EditorialDAO editorialDAO = new EditorialDAOimpl();
     private final ObservableList<Editorial> listaEditorial = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        configurarTabla();        
         cargarTabla();
         seleccionarFila();
     }
-
+    
+    private void configurarTabla() {
+        //CellValueFactory, propertyValueFactory
+        //Valor de fabrica de celda, propiedad de fabrica de celda
+        colNIT.setCellValueFactory(new PropertyValueFactory<Editorial,String>("nit"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<Editorial,String>("Nombre"));
+        colTelefono.setCellValueFactory(new PropertyValueFactory<Editorial,String>("Telefono"));
+        colDireccion.setCellValueFactory(new PropertyValueFactory<Editorial,String>("Direccion"));  
+    }
+   
     private void cargarTabla() {
         listaEditorial.setAll(editorialDAO.listarTodos());
         tablaEditorial.setItems(listaEditorial);
@@ -49,7 +65,7 @@ public class EditorialFXController implements Initializable {
         tablaEditorial.getSelectionModel().selectedItemProperty().addListener(
                 (obs, oldSelection, newSelection) -> {
                     if (newSelection != null) {
-                        txtNIT.setText(String.valueOf(newSelection.getNit()));
+                        txtnit.setText(String.valueOf(newSelection.getNit()));
                         txtNombre.setText(newSelection.getNombre());
                         txtDireccion.setText(newSelection.getDireccion());
                         txtTelefono.setText(newSelection.getTelefono());
@@ -60,14 +76,14 @@ public class EditorialFXController implements Initializable {
     @FXML
     public void handleGuardarEditorial() {
         try {
-            if (txtNIT.getText().isEmpty() || txtNombre.getText().isEmpty()
+            if (txtnit.getText().isEmpty() || txtNombre.getText().isEmpty()
                     || txtDireccion.getText().isEmpty() || txtTelefono.getText().isEmpty()) {
                 mostrarError("Los campos son necesarios y obligatorios.");
                 return;
             }
 
             Editorial editorial = new Editorial();
-            editorial.setNit((txtNIT.getText().trim()));
+            editorial.setNit((txtnit.getText().trim()));
             editorial.setNombre(txtNombre.getText().trim());
             editorial.setDireccion(txtDireccion.getText().trim());
             editorial.setTelefono(txtTelefono.getText().trim());
@@ -108,7 +124,7 @@ public class EditorialFXController implements Initializable {
     }
 
     private void limpiarFormulario() {
-        txtNIT.clear();
+        txtnit.clear();
         txtNombre.clear();
         txtDireccion.clear();
         txtTelefono.clear();
@@ -121,5 +137,6 @@ public class EditorialFXController implements Initializable {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-   
+
+
 }

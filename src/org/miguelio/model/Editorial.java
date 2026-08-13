@@ -1,7 +1,7 @@
 package org.miguelio.model;
 
 public class Editorial {
-   String Nit; 
+   String nit; 
    String nombre;
    String telefono;
    String direccion;
@@ -10,7 +10,7 @@ public class Editorial {
     }
 
     public Editorial(String nit, String nombre, String telefono, String direccion) {
-        this.Nit = Nit;
+        this.nit = nit;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
@@ -19,11 +19,11 @@ public class Editorial {
     
     
     public String getNit() {
-        return Nit;
+        return nit;
     }
     
     public void setNit(String Nit) {
-        this.Nit = Nit;
+        this.nit = nit;
     }
     
     public String getNombre() {

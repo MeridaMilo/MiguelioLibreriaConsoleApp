@@ -16,8 +16,8 @@ public static Stage escenarioPrincipal;
 
     @Override
     public void start(Stage escenarioPrincipal) throws Exception {
-        this.escenarioPrincipal = escenarioPrincipal;
-        FXMLLoader loader = new FXMLLoader (getClass().getResource("/org/miguelio/view/MenuPrincipalFXView.fxml"));
+        main.escenarioPrincipal = escenarioPrincipal;
+        FXMLLoader loader = new FXMLLoader (getClass().getResource("/org/miguelio/view/EditorialFXView.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         escenarioPrincipal.setTitle("Miguelio Libreria");
