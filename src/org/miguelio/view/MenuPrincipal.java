@@ -1,9 +1,12 @@
+
 package org.miguelio.view;
 import java.util.Scanner;
- 
+import org.miguelio.controller.ClienteController;
+import org.miguelio.controller.EditorialController;
+
 public class MenuPrincipal {
- 
-   Scanner leer = new Scanner(System.in);
+    Scanner leer = new Scanner(System.in);
+    
     public void iniciar(){
         int opcion = 0;
         do {
@@ -14,9 +17,13 @@ public class MenuPrincipal {
             System.out.println("5. Modulo Editoriales");
             System.out.println("4. Salir");
             opcion = Integer.parseInt(leer.nextLine());
+            
             switch (opcion) {
                 case 1:
-                    System.out.println("Cliente");
+                        System.out.println("Cliente");
+                        ClienteConsolerView vistaCliente = new ClienteConsolerView();
+                        ClienteController controladorCliente = new ClienteController(vistaCliente);
+                        controladorCliente.iniciar();
                     break;
                 case 2:
                     System.out.println("Autor");
@@ -25,17 +32,18 @@ public class MenuPrincipal {
                     System.out.println("Categoria");
                     break;
                 case 4:
-                    System.out.println("Adiós Vaquero!");
+                    System.out.println("Adios!!");
                     break;   
                 case 5:
                     System.out.println("Editoriales");
-                    break;
-                default:  
+                    EditorialConsoleView vistaEditorial = new EditorialConsoleView();
+                    EditorialController controladorEditorial = new EditorialController(vistaEditorial);
+                    controladorEditorial.iniciar();
+                    break;        
+                default:
                     System.out.println("NO existe esta opción");
             }
         } while (opcion != 4);
     }
 }
-
-
 

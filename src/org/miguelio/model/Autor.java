@@ -1,4 +1,3 @@
-
 package org.miguelio.model;
 
 public class Autor {
@@ -68,4 +67,3 @@ public class Autor {
 
     //getter and setters
     
-

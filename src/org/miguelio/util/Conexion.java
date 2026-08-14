@@ -1,17 +1,10 @@
-package org.miguelio.utils;
- 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
-import java.sql.DriverManager;
-
-import java.sql.SQLException;
+package org.miguelio.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
- 
+
 public class Conexion {
     private static Conexion instancia;
     
@@ -44,9 +37,3 @@ public class Conexion {
     
     
 }
-
-
-
-
-
-
