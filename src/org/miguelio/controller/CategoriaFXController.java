@@ -15,7 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.miguelio.dao.CategoriaDAO;
 import org.miguelio.dao.impl.CategoriaDAOImpl;
 import org.miguelio.model.Categoria;
-import org.miguelio.system.main;
+import org.miguelio.system.Principal;
 
 public class CategoriaFXController implements Initializable {
     @FXML
@@ -114,7 +114,7 @@ public class CategoriaFXController implements Initializable {
 
         try {
 
-            main.cambiarVista(
+            Principal.cambiarVista(
                     "/org/miguelio/view/MenuPrincipal.fxml"
             );
 
