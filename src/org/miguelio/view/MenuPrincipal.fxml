@@ -6,20 +6,20 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.miguelio.controller.MenuPrincipalController">
+<BorderPane xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.miguelio.controller.MenuPrincipalController">
     <top>
-        <Label text=" Menú Principal" style="-fx-font-size: 24; -fx-font-weight: bold;" BorderPane.alignment="CENTER">
+        <Label style="-fx-font-size: 24; -fx-font-weight: bold;" text=" Menú Principal" BorderPane.alignment="CENTER">
             <padding><Insets top="20" /></padding>
         </Label>
     </top>
     <center>
-        <VBox spacing="15" alignment="CENTER">
-            <padding><Insets top="30" right="40" bottom="30" left="40" /></padding>
-            <Button text="Clientes" prefWidth="220" prefHeight="40" onAction="#handleClientes" />
-            <Button text="Autores" prefWidth="220" prefHeight="40" onAction="#handleNoDisponible" />
-            <Button text="Categorías" prefWidth="220" prefHeight="40" onAction="#handleNoDisponible" />
-            <Button text="Editoriales" prefWidth="220" prefHeight="40" onAction="#handleNoDisponible" />
-            <Button text="Salir" prefWidth="220" prefHeight="40" onAction="#handleSalir" />
+        <VBox alignment="CENTER" spacing="15">
+            <padding><Insets bottom="30" left="40" right="40" top="30" /></padding>
+            <Button onAction="#handleClientes" prefHeight="40" prefWidth="220" text="Clientes" />
+            <Button onAction="#handleNoDisponible" prefHeight="40" prefWidth="220" text="Autores" />
+            <Button onAction="#handleCategorias" prefHeight="40" prefWidth="220" text="Categorías" />
+            <Button onAction="#handleEditoriales" prefHeight="40" prefWidth="220" text="Editoriales" />
+            <Button onAction="#handleSalir" prefHeight="40" prefWidth="220" text="Salir" />
         </VBox>
     </center>
 </BorderPane>

@@ -117,7 +117,7 @@ public class EditorialFXController implements Initializable {
     @FXML
     public void handleVolverEditorial() {
         try {
-            Principal.cambiarVista("/org/miguelio/view/MenuPrincipalFXView.fxml");
+            Principal.cambiarVista("/org/miguelio/view/MenuPrincipal.fxml");
         } catch (Exception e) {
             mostrarError("Error al volver al menú: " + e.getMessage());
         }
