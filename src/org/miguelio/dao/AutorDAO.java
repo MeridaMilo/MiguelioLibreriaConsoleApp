@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package org.miguelio.dao;
+import java.util.List;
+import org.miguelio.model.Autor;
 
-/**
- *
- * @author informatica
- */
+
 public interface AutorDAO {
-    
+    //FIRMAS DE METODOS
+    //Crud
+    boolean crear( Autor  autor);
+    List< Autor> listarTodos();
+     Autor buscar(String id);
+    boolean actualizar( Autor  autor);
+    boolean eliminar(String id);
 }
+
+
+
+
+
+
