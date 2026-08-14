@@ -27,6 +27,15 @@ public class MenuPrincipalController {
             mostrarError("Error al cargar la vista de clientes:\n" + e.getMessage());
         }
     }
+      @FXML
+    private void handleAutores() {
+        try {
+            Principal.cambiarVista("/org/miguelio/view/AutorFXView.fxml");
+        } catch (Exception e) {
+            mostrarError("Error al cargar la vista de clientes:\n" + e.getMessage());
+        }
+    }
+    
      @FXML
     private void handleCategorias() {
         try {

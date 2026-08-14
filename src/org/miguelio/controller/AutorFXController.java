@@ -17,7 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.miguelio.dao.AutorDAO;
 import org.miguelio.dao.impl.AutorDAOimpl;
 import org.miguelio.model.Autor;
-import org.miguelio.system.main;
+import org.miguelio.system.Principal;
 
 public class AutorFXController implements Initializable {
 
@@ -213,8 +213,8 @@ private TableColumn<Autor, String> colApellido; // Reemplaza 'Autor' por tu clas
 
         try {
 
-            main.cambiarVista(
-                    "/org/miguelio/view/MenuPrincipalFXView.fxml"
+            Principal.cambiarVista(
+                    "/org/miguelio/view/MenuPrincipal.fxml"
             );
 
         } catch (Exception e) {
