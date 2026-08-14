@@ -23,9 +23,8 @@ public class UsuarioDAO {
             try(ResultSet tablaResultado = consulta.executeQuery()){
                 if (tablaResultado.next()) {
                     usuario = new Usuario();
-                    usuario.setId(tablaResultado.getInt(1));
+                    
                     usuario.setUsername(tablaResultado.getString(2));
-                    usuario.setRol(tablaResultado.getString(3));
                 }
             }            
         } catch (SQLException e) {
@@ -36,15 +35,14 @@ public class UsuarioDAO {
     }
     
     // registrarUsuario 
-    public boolean registrarUsuario(String username, String passwordHash, String rol) {
+    public boolean registrarUsuario(String username, String passwordHash, String ConfirmarPassword) {
         String sql = "{call sp_registrar_usuario(?,?,?)}";
         try (Connection conexion = Conexion.getInstancia().conectar();
              CallableStatement consulta = conexion.prepareCall(sql)) {
             
             consulta.setString(1, username);
             consulta.setString(2, passwordHash);
-            consulta.setString(3, rol); 
-            
+            consulta.setString(3,ConfirmarPassword );
             int filasAfectadas = consulta.executeUpdate();
             return filasAfectadas > 0;
             
@@ -53,4 +51,6 @@ public class UsuarioDAO {
             return false;
         }
     }
+
+   
 }

@@ -2,6 +2,7 @@
 package org.miguelio.view;
 import java.util.Scanner;
 import org.miguelio.controller.ClienteController;
+import org.miguelio.controller.EditorialController;
 
 public class MenuPrincipal {
     Scanner leer = new Scanner(System.in);

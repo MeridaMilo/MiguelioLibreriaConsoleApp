@@ -51,9 +51,9 @@ public class RegistrarUsuarioController implements Initializable {
             String usuario = txtUsusario.getText().trim();
             String password = txtPassword.getText();
             String passwordHass = SecurityUtil.hashSHA256(password);
-            
-            String rolDefecto = "C"; 
-            boolean registrado = usuarioDAO.registrarUsuario(usuario, passwordHass, rolDefecto);
+            String ConfirmarPassword = txtConfirmarPassword.getText();
+           
+            boolean registrado = usuarioDAO.registrarUsuario(usuario, passwordHass, ConfirmarPassword );
             
             if (registrado) {
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Usuario registrado con exito");

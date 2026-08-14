@@ -18,7 +18,26 @@ public class MenuPrincipalController {
             mostrarError("Error al cargar la vista de clientes:\n" + e.getMessage());
         }
     }
+    
+     @FXML
+    private void handleEditoriales() {
+        try {
+            Principal.cambiarVista("/org/miguelio/view/EditorialFXView.fxml");
+        } catch (Exception e) {
+            mostrarError("Error al cargar la vista de clientes:\n" + e.getMessage());
+        }
+    }
+     @FXML
+    private void handleCategorias() {
+        try {
+            Principal.cambiarVista("/org/miguelio/view/CategoriaFXView.fxml");
+        } catch (Exception e) {
+            mostrarError("Error al cargar la vista de clientes:\n" + e.getMessage());
+        }
+    }
+    
 
+    
     @FXML
     private void handleNoDisponible() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -42,4 +61,3 @@ public class MenuPrincipalController {
     }
 
 }
-

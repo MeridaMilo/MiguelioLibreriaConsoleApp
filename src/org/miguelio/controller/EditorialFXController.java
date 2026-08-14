@@ -16,7 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.miguelio.dao.EditorialDAO;
 import org.miguelio.dao.impl.EditorialDAOimpl;
 import org.miguelio.model.Editorial;
-import org.miguelio.system.main;
+import org.miguelio.system.Principal;
 
 public class EditorialFXController implements Initializable {
 
@@ -117,7 +117,7 @@ public class EditorialFXController implements Initializable {
     @FXML
     public void handleVolverEditorial() {
         try {
-            main.cambiarVista("/org/miguelio/view/MenuPrincipalFXView.fxml");
+            Principal.cambiarVista("/org/miguelio/view/MenuPrincipalFXView.fxml");
         } catch (Exception e) {
             mostrarError("Error al volver al menú: " + e.getMessage());
         }

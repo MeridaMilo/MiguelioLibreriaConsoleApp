@@ -79,14 +79,8 @@ public class InicioSesionController implements Initializable {
         String rutaFXML = "";        
         
         
-        if (usuario.getRol() != null) {
-            switch (usuario.getRol().toLowerCase()) {
-                case "admin":
-                    rutaFXML = "/org/miguelio/view/AdminDashboardView.fxml"; 
-                    break;
-                case "empleado":
-                    rutaFXML = "/org/miguelio/view/EmpleadoDashboardView.fxml"; 
-                    break;
+        if (usuario.getUsername() != null) {
+            switch (usuario.getUsername().toLowerCase()) {
                 case "Menu Principal": 
                     rutaFXML = "/org/miguelio/view/MenuPrincipal.fxml";
                     break;
